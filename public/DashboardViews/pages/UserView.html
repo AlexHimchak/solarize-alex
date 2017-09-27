@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Solarize</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.5.1/css/bulma.min.css">
+    <link rel="stylesheet" type="text/css" href="../DashboardViews/css/morris.css">
+    <link rel="stylesheet" type="text/css" href="../DashBoardViews/css/admin.css">
+    <script src="https://code.jquery.com/jquery.js"></script>
+
+  </head>
+  <body>
+    <div class="columns">
+      <aside class="column is-2 aside hero is-fullheight is-hidden-mobile">
+        <div>
+          <div class="main">
+            <div class="title">Main</div>
+            <a href="#" class="item active"><span class="icon"><i class="fa fa-home"></i></span><span class="name">Dashboard</span></a>
+            <a href="#" class="item"><span class="icon"><i class="fa fa-map-marker"></i></span><span class="name">Activity</span></a>
+            <a href="#" class="item"><span class="icon"><i class="fa fa-th-list"></i></span><span class="name">All Leads</span></a>
+            <a href="#" class="item"><span class="icon"><i class="fa fa-folder-o"></i></span><span class="name">User Profiles</span></a>
+          </div>
+        </div>
+      </aside>
+      <div class="column is-10 admin-panel">
+        <nav class="nav has-shadow" id="top">
+          <div class="container">
+            <div class="nav-left">
+              <a class="nav-item" href="../index.html">
+                <img src="../images/Solarize.png" alt="Your Solar Sales Solution">
+              </a>
+            </div>
+            <span class="nav-toggle">
+              <span></span>
+              <span></span>
+              <span></span>
+            </span>
+            <div class="nav-right nav-menu is-hidden-tablet">
+              <a href="#" class="nav-item is-active">
+                Dashboard
+              </a>
+              <a href="#" class="nav-item">
+                Activity
+              </a>
+              <a href="#" class="nav-item">
+                All Leads
+              </a>
+            </div>
+          </div>
+        </nav>
+        <section class="hero is-small">
+          <!-- Hero content: will be in the middle -->
+          <div class="hero-body">
+            <div class="container">
+              <h1 class="title">
+                Solarize Dashboard
+              </h1>
+              <h2 class="subtitle username">
+                User
+              </h2>
+            </div>
+          </div>
+        </section>
+        <section class="section">
+          <div class="columns is-mobile is-multiline">
+            <div class="column is-full-desktop is-full-mobile">
+              <section class="panel">
+                <p class="panel-heading">
+                  All Leads
+                </p>
+                <p class="panel-tabs">
+                  <a class="is-active" href="#">All</a>
+                  <a href="#">Leads Viewed</a>
+                  <a href="#">Leads Contacted</a>
+                  <a href="#">Leads Converted</a>
+                  <a href="#">Leads Abandoned</a>
+                </p>
+                <div class="panel-block">
+                  <table id="table1" style="height: 280px" class="table is-bordered is-striped is-narrow is-fullwidth">
+                    <thead>
+                      <tr>
+                        <th>Lead ID</th>
+                        <th>Name</th>
+                        <th>State</th>
+                        <th>Email</th>
+                        <th>Phone</th>
+                        <th>Viewed</th>
+                        <th>Contacted</th>
+                        <th>Converted</th>
+                      </tr>
+                    </thead>
+                    <tr>
+                      <td>12345</td>
+                      <td>Jerry Seinfeld</td>
+                      <td>New York</td>
+                      <td>Jerry.Seinfeld@jerryseinfeld.com</td>
+                      <td><a href="*" <i class="fa fa-phone" aria-hidden="true" style="visibility: visible">(555)555-5555</a></td>
+                      <td><a href="*" <i id= "viewed" class="fa fa-sun-o" aria-hidden="true" style="visibility: visible"></i></td>
+                      <td><a href="*" <i id= "contacted" class="fa fa-sun-o" aria-hidden="true" style="visibility: visible"></i></td>
+                      <td><a href="*" <i id= "converted" class="fa fa-sun-o" aria-hidden="true" style="visibility: visible"></i></td>
+                    </tr>
+                    <tr>
+                      <td>123456</td>
+                      <td>Mike Tyson</td>
+                      <td>Nevada</td>
+                      <td>Mtyson@gmail.com</td>
+                      <td><a href="*" <i class="fa fa-phone" aria-hidden="true" style="visibility: visible">(555)555-5556</a></td>
+                      <td><a href="*" <i id= "viewed" class="fa fa-sun-o" aria-hidden="true" style="visibility: visible"></i></td>
+                      <td><a href="*" <i id= "contacted" class="fa fa-sun-o" aria-hidden="true" style="visibility: visible"></i></td>
+                      <td><a href="*" <i id= "converted" class="fa fa-sun-o" aria-hidden="true" style="visibility: visible"></i></td>
+                    </tr>
+                  </table>
+                </div>
+                <div class="panel-block">
+                  <button class="button is-default is-outlined is-fullwidth">
+                    View Data
+                  </button>
+                </div>
+              </section>
+            </div>
+            <div class="column is-two-thirds-desktop is-full-mobile">
+              <section class="panel">
+                <p class="panel-heading">
+                 Notifications
+                </p>
+                <div class="panel-block">
+                  <div class="is-fluid notification is-warning">
+                    <button class="delete" onclick="((this).parentNode.remove())"></button>
+                    <strong>Solar Sell</strong><p> New Order</p><p>150 units</p>
+                    <br>
+                    <small>1h ago | via: system</small> 
+                  </div>
+                  <div class="is-fluid notification">
+                    <button class="delete" onclick="((this).parentNode.remove())"></button>
+                    <strong>Sky Power</strong><p> Conversion Quota Exceeded</p>
+                    <br>
+                    <small>2h ago | via: system</small> 
+                  </div>
+                 <div class="is-fluid notification">
+                  <button class="delete" onclick="((this).parentNode.remove())"></button>
+                  <strong>Energize</strong><p> All Leads Delivered</p>
+                  <br>
+                  <small>1d ago | via: system</small> 
+                  </div>
+                </div>
+              </section>
+            </div>
+            <div class="column is-one-third-desktop is-full-mobile">
+              <section class="panel">
+                <p class="panel-heading">
+                  Leads Purchased
+                </p>
+                <div class="panel-block">
+                  <div id="chart1" style="height: 280px;"></div>
+                </div>
+                <div class="panel-block">
+                  <button class="button is-default is-outlined is-fullwidth">
+                    View Data
+                  </button>
+                </div>
+              </section>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+  <footer class="footer">
+    <div class="container">
+      <div class="has-text-centered">
+        <p>
+          <strong>Copyright 2017</strong> by David Hollingsworth
+        </p>
+        <p>
+          <a class="icon" href="https://github.com/dshollings">
+            <i class="fa fa-github"></i>
+          </a>
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <script type="text/javascript">
+  $.ajax({ url: "/api/User", method: "GET" })
+    .done(function(userData) {
+        console.log(userData);
+        var userArray = userData;
+
+        var userList = $('#table1');
+        userArray.forEach(function(user) {
+            console.log(user);
+            var userRow = $("<tr>");
+            userRow.append("<td>"+ user.id +"</td>");
+            userRow.append("<td>"+ user.user_name +"</td>");
+            userRow.append("<td>"+ user.state +"</td>");
+            userRow.append("<td>"+ user.email +"</td>");
+            userRow.append("<td>"+ user.phone +"</td>");
+            userRow.append("<td>" +"</td>");
+            userRow.append("<td>"+ "</td>");
+            userRow.append("<td>" +"</td>");
+            userList.append(userRow);
+        });
+
+    });
+  </script>
+
+
+<!--   <script async type="text/javascript" src="../js/bulma.js"></script>
+  <script type="text/javascript" src="../demo/jquery.js"></script>
+  <script type="text/javascript" src="../demo/raphael.min.js"></script>
+  <script type="text/javascript" src="../demo/morris.js"></script>
+  <script type="text/javascript" src="../demo/admin.js"></script> -->
+  </body>
+</html>

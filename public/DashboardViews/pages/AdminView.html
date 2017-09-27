@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Solarize Admin</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.5.1/css/bulma.min.css">
+    <link rel="stylesheet" type="text/css" href="../DashboardViews/css/morris.css">
+    <link rel="stylesheet" type="text/css" href="../DashBoardViews/css/admin.css">
+    <script src="https://code.jquery.com/jquery.js"></script>
+</head>
+
+<body>
+    <div class="columns">
+        <aside class="column is-2 aside hero is-fullheight is-hidden-mobile">
+            <div>
+                <div class="main">
+                    <div class="title">Main</div>
+                    <a href="#" class="item active"><span class="icon"><i class="fa fa-home"></i></span><span class="name">Dashboard</span></a>
+                    <a href="#" class="item"><span class="icon"><i class="fa fa-map-marker"></i></span><span class="name">Activity</span></a>
+                    <a href="#" class="item"><span class="icon"><i class="fa fa-th-list"></i></span><span class="name">All Leads</span></a>
+                    <a href="#" class="item"><span class="icon"><i class="fa fa-folder-o"></i></span><span class="name">User Profiles</span></a>
+                </div>
+            </div>
+        </aside>
+        <div class="column is-10 admin-panel">
+            <nav class="nav has-shadow" id="top">
+                <div class="container">
+                    <div class="nav-left">
+                        <a class="nav-item" href="../index.html">
+                <img src="../images/Solarize.png" alt="Your Solar Sales Solution">
+              </a>
+                    </div>
+                    <span class="nav-toggle">
+              <span></span>
+                    <span></span>
+                    <span></span>
+                    </span>
+                    <div class="nav-right nav-menu is-hidden-tablet">
+                        <a href="#" class="nav-item is-active">
+                Dashboard
+              </a>
+                        <a href="#" class="nav-item">
+                Activity
+              </a>
+                        <a href="#" class="nav-item">
+                All Leads
+              </a>
+                        <a href="#" class="nav-item">
+                User Profiles
+              </a>
+                    </div>
+                </div>
+            </nav>
+            <section class="hero is-small">
+                <!-- Hero content: will be in the middle -->
+                <div class="hero-body">
+                    <div class="container">
+                        <h1 class="title">
+                Solarize Dashboard
+              </h1>
+                        <h2 class="subtitle">
+                Admin
+              </h2>
+                    </div>
+                </div>
+            </section>
+            <section class="section">
+                <div class="columns is-mobile is-multiline">
+                    <div class="column is-full-desktop is-full-mobile">
+                        <section class="panel">
+                            <p class="panel-heading">
+                                Leads
+                            </p>
+                            <div class="panel-block">
+                                <table id="table1" style="height: 280px" class="table is-bordered is-striped is-narrow is-fullwidth" onpageshow="sortTable(0)">
+                                    <thead>
+                                        <tr>
+                                            <th onclick="sortTable(0)">Name</th>
+                                            <th onclick="sortTable(1)">Email</th>
+                                            <th onclick="sortTable(2)">Phone</th>
+                                            <th onclick="sortTable(3)">Address</th>
+                                            <th onclick="sortTable(4)">City</th>
+                                            <th onclick="sortTable(5)">State</th>
+                                            <th onclick="sortTable(6)">Zip</th>
+                                        </tr>
+                                    </thead>
+                                </table>
+                            </div>
+                        </section>
+                    </div>
+                    <div class="column is-half-desktop is-full-mobile">
+                        <section class="panel">
+                            <p class="panel-heading">
+                                Leads by State
+                                <select id="statelist" name="state_full_name">
+                                    <option value="AL">Alabama</option>
+                                    <option value="AK">Alaska</option>
+                                    <option value="AZ">Arizona</option>
+                                    <option value="AR">Arkansas</option>
+                                    <option value="ca">California</option>
+                                    <option value="CO">Colorado</option>
+                                    <option value="CT">Connecticut</option>
+                                    <option value="DE">Delaware</option>
+                                    <option value="DC">District Of Columbia</option>
+                                    <option value="FL">Florida</option>
+                                    <option value="GA">Georgia</option>
+                                    <option value="HI">Hawaii</option>
+                                    <option value="ID">Idaho</option>
+                                    <option value="IL">Illinois</option>
+                                    <option value="IN">Indiana</option>
+                                    <option value="IA">Iowa</option>
+                                    <option value="KS">Kansas</option>
+                                    <option value="KY">Kentucky</option>
+                                    <option value="LA">Louisiana</option>
+                                    <option value="ME">Maine</option>
+                                    <option value="MD">Maryland</option>
+                                    <option value="MA">Massachusetts</option>
+                                    <option value="MI">Michigan</option>
+                                    <option value="MN">Minnesota</option>
+                                    <option value="MS">Mississippi</option>
+                                    <option value="MO">Missouri</option>
+                                    <option value="MT">Montana</option>
+                                    <option value="NE">Nebraska</option>
+                                    <option value="NV">Nevada</option>
+                                    <option value="NH">New Hampshire</option>
+                                    <option value="NJ">New Jersey</option>
+                                    <option value="NM">New Mexico</option>
+                                    <option value="NY">New York</option>
+                                    <option value="NC">North Carolina</option>
+                                    <option value="ND">North Dakota</option>
+                                    <option value="OH">Ohio</option>
+                                    <option value="OK">Oklahoma</option>
+                                    <option value="OR">Oregon</option>
+                                    <option value="PA">Pennsylvania</option>
+                                    <option value="RI">Rhode Island</option>
+                                    <option value="SC">South Carolina</option>
+                                    <option value="SD">South Dakota</option>
+                                    <option value="TN">Tennessee</option>
+                                    <option value="TX">Texas</option>
+                                    <option value="UT">Utah</option>
+                                    <option value="VT">Vermont</option>
+                                    <option value="VA">Virginia</option>
+                                    <option value="WA">Washington</option>
+                                    <option value="WV">West Virginia</option>
+                                    <option value="WI">Wisconsin</option>
+                                    <option value="WY">Wyoming</option>
+                                </select>
+                                <input type="submit" id="submitstate" value="Submit">
+                            </p>
+                            <div class="panel-block">
+                                <table id="table2" style="height: 280px" class="table is-bordered is-striped is-narrow is-fullwidth is-half-desktop" onpageshow="sortTable(0)">
+                                    <thead>
+                                        <tr>
+                                            <th onclick="sortTable(0)">Name</th>
+                                            <th onclick="sortTable(1)">Phone</th>
+                                            <th onclick="sortTable(2)">Address</th>
+
+                                        </tr>
+                                    </thead>
+                                </table>
+                            </div>
+                            <div class="panel-block">
+                                <button class="button is-default is-outlined is-fullwidth">
+                                    View Data
+                                </button>
+                            </div>
+                        </section>
+                    </div>
+                    <div class="column is-half-desktop is-full-mobile">
+                        <section class="panel">
+                            <p class="panel-heading">
+                                Information
+                            </p>
+                            <div class="panel-block" id="infobox">
+                            </div>
+                        </section>
+                    </div>
+                    <div class="column is-half-desktop is-full-mobile">
+                        <section class="panel">
+                            <p class="panel-heading">
+                                Conversions by User
+                            </p>
+                            <div class="panel-block">
+                                <table class="table">
+                                    <thead>
+                                        <tr>
+                                            <th>Organization</th>
+                                            <th>Leads</th>
+                                            <th>Conversions</th>
+                                            <th>Coversion Rate</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>Solar Sells</td>
+                                            <td>5,250</td>
+                                            <td>525</td>
+                                            <td>10%</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Sky Power</td>
+                                            <td>3,000</td>
+                                            <td>600</td>
+                                            <td>20%</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Energize</td>
+                                            <td>600</td>
+                                            <td>200</td>
+                                            <td>33%</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </section>
+                    </div>
+                </div>
+        </div>
+        </section>
+    </div>
+    </div>
+    <footer class="footer">
+        <div class="container">
+            <div class="has-text-centered">
+                <p>
+                    <strong>Copyright 2017</strong> by David Hollingsworth
+                </p>
+                <p>
+                    <a class="icon" href="https://github.com/dshollings">
+            <i class="fa fa-github"></i>
+          </a>
+                </p>
+            </div>
+        </div>
+    </footer>
+    <script type="text/javascript">
+    $.ajax({ url: "/api/leads", method: "GET" })
+        .done(function(userData) {
+            console.log(userData);
+            var userArray = userData;
+
+            var userList = $('#table1');
+            userArray.forEach(function(leads) {
+                console.log(leads);
+                var userRow = $("<tr>");
+                userRow.append("<td>" + leads.first_name + " " + leads.last_name + "</td>");
+                userRow.append("<td>" + leads.email + "</td>");
+                userRow.append("<td>" + leads.phone + "</td>");
+                userRow.append("<td>" + leads.address + "</td>");
+                userRow.append("<td>" + leads.city + "</td>");
+                userRow.append("<td>" + leads.state + "</td>");
+                userRow.append("<td>" + leads.zip + "</td>");
+                userList.append(userRow);
+            });
+
+        });
+
+    function sortTable(n) {
+        var table, rows, switching, i, x, y, shouldSwitch, dir, switchcount = 0;
+        table = document.getElementById("table1");
+        switching = true;
+        //Set the sorting direction to ascending:
+        dir = "asc";
+        /*Make a loop that will continue until
+        no switching has been done:*/
+        while (switching) {
+            //start by saying: no switching is done:
+            switching = false;
+            rows = table.getElementsByTagName("TR");
+            /*Loop through all table rows (except the
+            first, which contains table headers):*/
+            for (i = 1; i < (rows.length - 1); i++) {
+                //start by saying there should be no switching:
+                shouldSwitch = false;
+                /*Get the two elements you want to compare,
+                one from current row and one from the next:*/
+                x = rows[i].getElementsByTagName("TD")[n];
+                y = rows[i + 1].getElementsByTagName("TD")[n];
+                /*check if the two rows should switch place,
+                based on the direction, asc or desc:*/
+                if (dir == "asc") {
+                    if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
+                        //if so, mark as a switch and break the loop:
+                        shouldSwitch = true;
+                        break;
+                    }
+                } else if (dir == "desc") {
+                    if (x.innerHTML.toLowerCase() < y.innerHTML.toLowerCase()) {
+                        //if so, mark as a switch and break the loop:
+                        shouldSwitch = true;
+                        break;
+                    }
+                }
+            }
+            if (shouldSwitch) {
+                /*If a switch has been marked, make the switch
+                and mark that a switch has been done:*/
+                rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+                switching = true;
+                //Each time a switch is done, increase this count by 1:
+                switchcount++;
+            } else {
+                /*If no switching has been done AND the direction is "asc",
+                set the direction to "desc" and run the while loop again.*/
+                if (switchcount == 0 && dir == "asc") {
+                    dir = "desc";
+                    switching = true;
+                }
+            }
+        }
+    }
+    $("#table2").on('click', 'td', function() {
+        alert('clicked!');
+    });
+
+
+    $("#submitstate").click(function() {
+        var loader_img = '<img src="https://assets.materialup.com/uploads/63bd53b1-446a-42d5-be93-5e2bcffb4345/preview.gif" alt="Loading" style="width:304px;height:228px;" />';
+        $("#infobox").append(loader_img);
+        $("#infobox").append("Calling Alex");
+
+
+
+        $('#table2 tbody').remove();
+
+        $.ajax({ url: "/api/leads", method: "GET" })
+            .done(function(userData) {
+                console.log(userData);
+                var userArray = userData;
+                var e = $("#statelist").val();
+                console.log(e);
+
+                var userList = $('#table2');
+                userArray.forEach(function(leads) {
+                    console.log(leads);
+                    var userRow = $("<tr>");
+                    if (e === leads.state) {
+                        userRow.append("<td>" + leads.first_name + " " + leads.last_name + "</td>");
+                        userRow.append("<td>" + leads.phone + "</td>");
+                        userRow.append("<td>" + leads.address + " " + leads.city + "</td>");
+                        userList.append(userRow);
+                    }
+
+
+                });
+
+            });
+    });
+    </script>
+</body>
+
+</html>
