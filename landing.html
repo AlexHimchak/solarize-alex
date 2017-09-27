@@ -62,7 +62,7 @@
                 <br>
                 <br>
                 <p>
-                    <div class="modal">
+                    <div class="modal" id=modal1>
                         <div class="modal-background"></div>
                         <div class="modal-card">
                             <header class="modal-card-head">
@@ -166,6 +166,32 @@
                             </footer>
                         </div>
                     </div>
+                        <div class="modal" id= modal2>
+                        <div class="modal-background"></div>
+                        <div class="modal-card">
+                            <header class="modal-card-head">
+                                <p class="modal-card-title">Thank You For Submitting!</p>
+                                <button class="delete" aria-label="close"></button>
+                            </header>
+                            <section class="modal-card-body">
+                                <fieldset>
+                                    <input type="hidden" name="oid" value="00D80000000dNiA">
+                                    <input type="hidden" name="retURL" value="#">
+                                    <!--ADJUST TO THE THANK YOU PAGE YOU WANT-->
+
+                                    <div>
+
+                                        <div id=fieldinfo>
+                                        </div>
+
+                                    </div>
+
+                            </section>
+                            <footer class="modal-card-foot">
+                                <button class="button is-danger" id="close">Close</button>
+                            </footer>
+                        </div>
+                    </div>
                     <a class="button is-outlined" id="showModal">
                         <!-- <span class="icon">
               <i class="fa fa-download"></i> 
@@ -241,6 +267,8 @@
     <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
     <script type="text/javascript" src="bulma.js"></script>
     <script>
+                        $("#modal2").removeClass("is-active");
+
     $("#butSubmit").on("click", function() {
         console.log("clicked");
 
@@ -267,8 +295,12 @@
                         console.log(data);
                         console.log("--------------------shop id: " + data.id);
                     });
-                    // $(".modal").removeClass("is-active");
+                    $(".modal").removeClass("is-active");
+                    $("#modal2").addClass("is-active"); 
+                    $("#fieldinfo").append("Thank You " + newLead.first_name + "!" + "<br> A Representative will be contacting you shortly"); 
+
                 });
+
     </script>
     <style>
     body {
@@ -381,6 +413,10 @@
         color: white;
         text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
     }
+    #fieldinfo{
+        color: blue;
+        font-size: 48px;
+    }
     </style>
     <script>
         (function() {
@@ -393,7 +429,7 @@
 })();
 
 $("#showModal").click(function() {
-  $(".modal").addClass("is-active");  
+  $("#modal1").addClass("is-active");  
 });
 
 $(".delete").click(function() {
@@ -407,6 +443,10 @@ $("#cancel").click(function() {
 $(".modal-close").click(function() {
    $(".modal").removeClass("is-active");
 });
+$("#close").click(function() {
+   $("#modal2").removeClass("is-active");
+});
+
     </script>
 </body>
 
