@@ -367,7 +367,7 @@ $("#table2").on('click', 'td', function() {
 $("#submitstate").click(function() {
 
 
-    $('#table2').empty();
+    $('#table2').find("tr:gt(0)").remove();
 
     $.ajax({ url: "/api/leads", method: "GET" })
         .done(function(userData) {
