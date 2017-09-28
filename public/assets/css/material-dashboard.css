@@ -6781,4 +6781,5 @@ footer .btn {
 }
 #statelist, #submitstate{
     color: black;
+    height: 40px;
 }
