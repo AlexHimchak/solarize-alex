@@ -3,20 +3,20 @@ var path = require('path');
 
 module.exports = function(app) {
   app.get("/api/user", function(req, res) {
-  db.Users.findAll({}).then(function(dbUser) {
+  db.User.findAll({}).then(function(dbUser) {
       res.json(dbUser);
     });
   });
 
   app.post("/api/user", function(req, res) {
     console.log(req.body);
-    db.Users.create(req.body).then(function(dbUser) {
+    db.User.create(req.body).then(function(dbUser) {
       res.json(dbUser);
     });
   });
 
   app.delete("/api/user/:id", function(req, res) {
-    db.Users.destroy({
+    db.User.destroy({
       where: {
         id: req.params.id
       }

@@ -18,6 +18,8 @@
     <!--     Fonts and icons     -->
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" rel="stylesheet">
     <link href='https://fonts.googleapis.com/css?family=Roboto:400,700,300|Material+Icons' rel='stylesheet' type='text/css'>
+    <script src="https://code.jquery.com/jquery.js"></script>
+
 </head>
 
 <body>
@@ -35,14 +37,13 @@
             </div>
             <div class="sidebar-wrapper">
                 <ul class="nav">
-                                    <li>
+                    <li>
                         <a href="dashboard.html">
                             <i class="material-icons">dashboard</i>
                             <p>Dashboard</p>
                         </a>
                     </li>
                     <li class="active">
-
                         <a href="./user.html">
                             <i class="material-icons">person</i>
                             <p>User Profile</p>
@@ -66,7 +67,6 @@
                             <p>Notifications</p>
                         </a>
                     </li>
-
                 </ul>
             </div>
         </div>
@@ -146,55 +146,59 @@
                                 <div class="card-content">
                                     <form>
                                         <div class="row">
-                                            <div class="col-md-5">
+                                            <div class="col-md-4">
                                                 <div class="form-group label-floating">
-                                                    <label class="control-label">Company (disabled)</label>
-                                                    <input type="text" class="form-control" disabled>
+                                                    <label class="control-label">Company </label>
+                                                    <input type="text" id= "company_name" class="form-control">
                                                 </div>
                                             </div>
-                                            <div class="col-md-3">
+                                            </div>
+                                            <div class="row">
+
+                                            <div class="col-md-4">
                                                 <div class="form-group label-floating">
                                                     <label class="control-label">Username</label>
-                                                    <input type="text" class="form-control">
+                                                    <input type="text" id = "user_name" class="form-control">
+                                                </div>
+                                            </div>
+                                            </div><div class ="row">
+                                            <div class="col-md-4">
+                                                <div class="form-group label-floating">
+                                                    <label class="control-label">User Password</label>
+                                                    <input type="text" id= "user_password" class="form-control">
                                                 </div>
                                             </div>
                                             <div class="col-md-4">
                                                 <div class="form-group label-floating">
-                                                    <label class="control-label">Email address</label>
-                                                    <input type="email" class="form-control">
+                                                    <label class="control-label">Salt</label>
+                                                    <input type="text" id = "salt" class="form-control">
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="row">
                                             <div class="col-md-6">
                                                 <div class="form-group label-floating">
-                                                    <label class="control-label">Fist Name</label>
-                                                    <input type="text" class="form-control">
+                                                    <label class="control-label">Email</label>
+                                                    <input type="email" id="email" class="form-control">
                                                 </div>
                                             </div>
+                                        </div>
+                                        <div class="row">
                                             <div class="col-md-6">
                                                 <div class="form-group label-floating">
-                                                    <label class="control-label">Last Name</label>
-                                                    <input type="text" class="form-control">
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-md-12">
-                                                <div class="form-group label-floating">
-                                                    <label class="control-label">Adress</label>
-                                                    <input type="text" class="form-control">
+                                                    <label class="control-label">Phone</label>
+                                                    <input type="text" id="phone" class="form-control">
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="row">
                                             <div class="col-md-4">
                                                 <div class="form-group label-floating">
-                                                    <label class="control-label">City</label>
-                                                    <input type="text" class="form-control">
+                                                    <label class="control-label">State</label>
+                                                    <input type="text" id= "state" class="form-control">
                                                 </div>
                                             </div>
-                                            <div class="col-md-4">
+                                            <!--                                             <div class="col-md-4">
                                                 <div class="form-group label-floating">
                                                     <label class="control-label">Country</label>
                                                     <input type="text" class="form-control">
@@ -205,9 +209,9 @@
                                                     <label class="control-label">Postal Code</label>
                                                     <input type="text" class="form-control">
                                                 </div>
-                                            </div>
+                                            </div> -->
                                         </div>
-                                        <div class="row">
+<!--                                         <div class="row">
                                             <div class="col-md-12">
                                                 <div class="form-group">
                                                     <label>About Me</label>
@@ -217,8 +221,8 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                        </div>
-                                        <button type="submit" class="btn btn-primary pull-right">Update Profile</button>
+                                        </div> -->
+                                        <button type="submit" id= "formsub" class="btn btn-primary pull-right">Update Profile</button>
                                         <div class="clearfix"></div>
                                     </form>
                                 </div>
@@ -228,14 +232,14 @@
                             <div class="card card-profile">
                                 <div class="card-avatar">
                                     <a href="#pablo">
-                                        <img class="img" src="../assets/img/faces/marc.jpg" />
+                                        <img class="img" src="../assets/img/solarize.png" />
                                     </a>
                                 </div>
                                 <div class="content">
-                                    <h6 class="category text-gray">CEO / Co-Founder</h6>
-                                    <h4 class="card-title">Alec Thompson</h4>
+                                    <h6 class="category text-gray">CEO's / Co-Founders</h6>
+                                    <h4 class="card-title">Alex Himchak, David Hollingsworth, Sungwoo Hurr, Thomas Mercer </h4>
                                     <p class="card-content">
-                                        Don't be scared of the truth because we need to restart the human foundation in truth And I love you like Kanye loves Kanye I love Rick Owens’ bed design but the back is...
+                                        We dedicate ourselves to giving you the best solar panels for your money. 
                                     </p>
                                     <a href="#pablo" class="btn btn-primary btn-round">Follow</a>
                                 </div>
@@ -273,7 +277,7 @@
                     <p class="copyright pull-right">
                         &copy;
                         <script>
-                            document.write(new Date().getFullYear())
+                        document.write(new Date().getFullYear())
                         </script>
                         <a href="http://www.github.com">Solarize</a>
                     </p>
@@ -282,6 +286,33 @@
         </div>
     </div>
 </body>
+<script>
+    $("#formsub").on("click", function() {
+        console.log("clicked");
+
+
+                var itemurl;
+                var newUser = {
+                    user_name: $("#user_name").val().trim(),
+                    user_password: $("#user_password").val().trim(),
+                    salt: $("#salt").val().trim(),
+                    company_name: $("#company_name").val().trim(),
+                    email: $("#email").val().trim(),
+                    phone: $("#phone").val().trim(),
+                    state: $("#state").val(),                    
+                };
+                console.log(newUser);
+
+
+                $.post("/api/user", newUser)
+                    .done(function(data) {
+                        console.log(data);
+                        console.log("--------------------user id: " + newUser.id);
+                    });
+
+                });
+
+    </script>
 <!--   Core JS Files   -->
 <script src="../assets/js/jquery-3.2.1.min.js" type="text/javascript"></script>
 <script src="../assets/js/bootstrap.min.js" type="text/javascript"></script>
@@ -295,8 +326,8 @@
 <!--  Notifications Plugin    -->
 <script src="../assets/js/bootstrap-notify.js"></script>
 <!--  Google Maps Plugin    -->
-<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY_HERE"></script>
-<!-- Material Dashboard javascript methods -->
+<!-- <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY_HERE"></script>
+ --><!-- Material Dashboard javascript methods -->
 <script src="../assets/js/material-dashboard.js?v=1.2.0"></script>
 <!-- Material Dashboard DEMO methods, don't include it in your project! -->
 <script src="../assets/js/demo.js"></script>
