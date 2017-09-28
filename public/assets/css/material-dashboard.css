@@ -6779,3 +6779,6 @@ footer .btn {
         overflow: visible;
     }
 }
+#statelist, #submitstate{
+    color: black;
+}
