@@ -236,7 +236,8 @@
             </div>
 </body>
 <script type="text/javascript">
-$.ajax({ url: "/api/leads", method: "GET" })
+// "/api/leads"
+$.ajax({ url: "https://warm-shore-52776.herokuapp.com/api/lead", method: "GET" })
     .done(function(userData) {
         console.log(userData);
         var userArray = userData;
@@ -321,7 +322,7 @@ $("#submitstate").click(function() {
 
     $('#table2').find("tr:gt(0)").remove();
 
-    $.ajax({ url: "/api/leads", method: "GET" })
+    $.ajax({ url: "https://warm-shore-52776.herokuapp.com/api/lead", method: "GET" })
         .done(function(userData) {
             console.log(userData);
             var userArray = userData;
