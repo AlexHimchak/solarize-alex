@@ -237,7 +237,7 @@
 </body>
 <script type="text/javascript">
 // "/api/leads"
-$.ajax({ url: "https://warm-shore-52776.herokuapp.com/api/lead", method: "GET" })
+$.ajax({ url: "/api/leads", method: "GET" })
     .done(function(userData) {
         console.log(userData);
         var userArray = userData;
@@ -248,7 +248,8 @@ $.ajax({ url: "https://warm-shore-52776.herokuapp.com/api/lead", method: "GET" }
             var userRow = $("<tr>");
             userRow.append("<td>" + leads.first_name + " " + leads.last_name + "</td>");
             userRow.append("<td>" + leads.email + "</td>");
-            userRow.append("<td>" + leads.phone + "</td>");
+            // userRow.append("<td>" + leads.phone + "</td>");
+            userRow.append("<td>" + leads.phone + "<form action='/contact/twiliosms' method='POST'> <button type='submit' name='phone' value='" + leads.phone + "'>SMS</button></form>" + "</td>");
             userRow.append("<td>" + leads.address + "</td>");
             userRow.append("<td>" + leads.city + "</td>");
             userRow.append("<td>" + leads.state + "</td>");
