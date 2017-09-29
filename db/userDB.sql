@@ -11,7 +11,7 @@ CREATE TABLE Users
     salt varchar(255) NOT NULL,
 	company_name varchar(255) NOT NULL,
     email varchar(255) NOT NULL,
-    phone INT(10) NOT NULL,
+    phone varchar(255) NOT NULL,
     state varchar(2) NOT NULL,
     createdAt DATETIME NOT NULL DEFAULT NOW(),
     updatedAt DATETIME NOT NULL DEFAULT NOW(),
