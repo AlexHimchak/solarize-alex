@@ -184,8 +184,8 @@
                                     <thead>
                                         <tr>
                                             <th onclick="sortTable(0)">Name</th>
-                                            <th onclick="sortTable(1)">Phone</th>
-                                            <th onclick="sortTable(2)">Address</th>
+                                            <th onclick="sortTable(1)">Email</th>
+                                            <th onclick="sortTable(2)">Phone</th>
                                         </tr>
                                     </thead>
                                 </table>
@@ -243,7 +243,7 @@ $.ajax({ url: "/api/leads", method: "GET" })
             console.log(leads);
             var userRow = $("<tr>");
             userRow.append("<td>" + leads.first_name + " " + leads.last_name + "</td>");
-            userRow.append("<td>" + leads.email + "<form action='/contact/email' method='POST'> <button type='submit' name='email' value='" + leads.email + "'>Contact</button></form>" + "</td>");
+            userRow.append("<td>" + leads.email + "<form action='/contact/email' method='POST'> <button type='submit' id='9999' name='email' value='" + leads.email + "'>Contact</button></form>" + "</td>");
             // userRow.append("<td>" + leads.email + "</td>");
             userRow.append("<td>" + leads.phone + "<form action='/contact/twiliosms' method='POST'> <button type='submit' id=" + leads.id + " name='phone' value='" + leads.phone + "'>SMS</button></form>" + "</td>");
 
@@ -333,9 +333,10 @@ $("#submitstate").click(function() {
                 var userRow = $("<tr>");
                 if (e === leads.state) {
                     userRow.append("<td>" + leads.first_name + " " + leads.last_name + "</td>");
+                    userRow.append("<td>" + leads.email + "<form action='/contact/email' method='POST'> <button type='submit' id='9999' name='email' value='" + leads.email + "'>Contact</button></form>" + "</td>");
                     userRow.append("<td>" + leads.phone + "<form action='/contact/twiliosms' method='POST'> <button type='submit' id=" + leads.id + " name='phone' value='" + leads.phone + "'>SMS</button></form>" + "</td>");
                     // userRow.append("<td>" + leads.phone + "</td>");
-                    userRow.append("<td>" + leads.address + " " + leads.city + "</td>");
+                    
                     userList.append(userRow);
                 }
 
@@ -364,7 +365,10 @@ $(document).on("click", "button", function() {
             console.log(thisId);
             console.log(data);
         if (thisId === "submitstate"){
-            alert("Getting Leads From State")
+            alert("Getting Leads From State");
+        }
+        else if(thisId === "9999"){
+            alert("Emailing your lead");
         }
         else{
             alert("Texting "+ data.first_name + " " + data.last_name + " " + "in" + " " + data.city + " " + "Thank You!");
