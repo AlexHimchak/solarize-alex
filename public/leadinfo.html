@@ -266,6 +266,12 @@
 
     $("#finish").on("click", function() {
         console.log("clicked");
+        var newphone = $("#phone").val().trim();
+        var sliceone  = newphone.slice(1,4);
+        var slicetwo = newphone.slice(6,9);
+        var slicethree = newphone.slice(10,14);
+        newphone = sliceone + slicetwo + slicethree;
+
 
 
         var itemurl;
@@ -273,7 +279,8 @@
             first_name: $("#first_name").val().trim(),
             last_name: $("#last_name").val().trim(),
             email: $("#email").val().trim(),
-            phone: $("#phone").val().trim(),
+            // phone: $("#phone").val().trim(),
+            phone: newphone,
             contacted: false,
             converted: false,
             address: $("#address").val().trim(),
@@ -297,6 +304,26 @@
 
 
     });
+
+$(document).ready(function(){
+  $("#phone").keypress(function (e) {
+    if (e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57)) {
+      return false;
+    }
+    var curchr = this.value.length;
+    var curval = $(this).val();
+    if (curchr == 3 && curval.indexOf("(") <= -1) {
+      $(this).val("(" + curval + ")" + "-");
+    } else if (curchr == 4 && curval.indexOf("(") > -1) {
+      $(this).val(curval + ")-");
+    } else if (curchr == 5 && curval.indexOf(")") > -1) {
+      $(this).val(curval + "-");
+    } else if (curchr == 9) {
+      $(this).val(curval + "-");
+      $(this).attr('maxlength', '14');
+    }
+  });
+});
     </script>
 
 </html>
