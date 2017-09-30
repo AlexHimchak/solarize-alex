@@ -51,6 +51,8 @@ module.exports = function(app) {
 
   app.post('/contact/email', function(req,res){
     sendgrid(req.body.email, "From Solarize", "You have been contacted via Solarize");
+    res.redirect("/table.html");
+
   });
 
   app.get("/api/user", function(req, res) {
