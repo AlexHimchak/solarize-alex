@@ -36,7 +36,10 @@ module.exports = function(app) {
   //   res.redirect('/');
   // })
 
-
+ app.post('/contact/twiliosm', function(req,res){
+    // res.redirect("/table.html");
+  });
+ 
   app.post('/contact/twiliosms', function(req,res){
     twiliosms(req.body.phone, "You have been contacted via Solarize");
     res.redirect("/table.html");
