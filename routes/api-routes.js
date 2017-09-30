@@ -39,7 +39,7 @@ module.exports = function(app) {
 
   app.post('/contact/twiliosms', function(req,res){
     twiliosms(req.body.phone, "You have been contacted via Solarize");
-      res.redirect("/table.html")  ;
+    res.redirect("/table.html");
   });
 
   // app.post('./contact/twiliovoice', function(req,res){
