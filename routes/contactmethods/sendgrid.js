@@ -12,7 +12,7 @@ function email(to, subject, text)
 {
 const msg = {
   to: to,
-  from: 'WhatverWeDecideToCallThis@ThisDoesntExist.com',
+  from: 'admin@solarize.com',
   subject: subject,
   text: text,
   html: text
