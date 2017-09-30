@@ -79,6 +79,8 @@ module.exports = function(app) {
     });
   });
 
+  
+
   app.post("/api/lead", function(req, res) {
     console.log(req.body);
     db.Leads.create(req.body).then(function(dbUser) {
@@ -86,7 +88,7 @@ module.exports = function(app) {
     });
   });
 
-  app.delete("/api/lead/:id", function(req, res) {
+  app.delete("/api/leads/:id", function(req, res) {
     db.Leads.destroy({
       where: {
         id: req.params.id

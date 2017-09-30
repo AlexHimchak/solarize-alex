@@ -9,6 +9,16 @@ module.exports = function(app) {
     });
   });
 
+    app.get("/api/leads/:id", function(req, res) {
+    db.Lead.findOne({
+      where: {
+        id: req.params.id
+      }
+    }).then(function(dbShop) {
+      res.json(dbShop);
+    });
+  });
+
   app.post("/api/leads", function(req, res) {
     console.log(req.body);
     db.Lead.create(req.body).then(function(dbUser) {
