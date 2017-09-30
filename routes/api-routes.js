@@ -3,7 +3,7 @@ var path = require('path');
 // const setupPassport = require('./setupPassport.js');
 // const twiliovoice = require('./contactmethods/twiliovoice.js');
 const twiliosms = require('./contactmethods/twiliosms.js');
-// const sendgrid = require('./contactmethods/sendgrid.js')
+const sendgrid = require('./contactmethods/sendgrid.js')
 
 
 module.exports = function(app) {
@@ -39,7 +39,7 @@ module.exports = function(app) {
  app.post('/contact/twiliosm', function(req,res){
     // res.redirect("/table.html");
   });
- 
+
   app.post('/contact/twiliosms', function(req,res){
     twiliosms(req.body.phone, "You have been contacted via Solarize");
     res.redirect("/table.html");
@@ -49,9 +49,9 @@ module.exports = function(app) {
   //   twiliovoice(req.body.phone);
   // });
 
-  // app.post('./contact/email', function(req,res){
-  //   sendgrid(req.body.email, "From Solarize", "You have been contacted via Solarize");
-  // });
+  app.post('/contact/email', function(req,res){
+    sendgrid(req.body.email, "From Solarize", "You have been contacted via Solarize");
+  });
 
   app.get("/api/user", function(req, res) {
   db.User.findAll({}).then(function(dbUser) {

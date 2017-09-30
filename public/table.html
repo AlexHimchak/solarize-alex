@@ -243,8 +243,8 @@ $.ajax({ url: "/api/leads", method: "GET" })
             console.log(leads);
             var userRow = $("<tr>");
             userRow.append("<td>" + leads.first_name + " " + leads.last_name + "</td>");
-            userRow.append("<td>" + leads.email + "</td>");
-            // userRow.append("<td>" + leads.phone + "</td>");
+            userRow.append("<td>" + leads.email + "<form action='/contact/email' method='POST'> <button type='submit' name='email' value='" + leads.email + "'>Contact</button></form>" + "</td>");
+            // userRow.append("<td>" + leads.email + "</td>");
             userRow.append("<td>" + leads.phone + "<form action='/contact/twiliosms' method='POST'> <button type='submit' id=" + leads.id + " name='phone' value='" + leads.phone + "'>SMS</button></form>" + "</td>");
 
             userRow.append("<td>" + leads.address + "</td>");
